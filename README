@@ -1,0 +1,31 @@
+System do powtórek
+
+1. Założenia
+    a) dodawanie notatek co chce powtórzyć:
+        tytuł materiału
+        tytuł książki, z której czerpać informację
+        strona internetowa, z której czerpać informację
+        ćwiczenie/a jakie wykonać w ramach powtórki
+    b) przypomnienia
+    c) generowanie nastepnej daty powtorki
+    d) możliwość przyspieszenia danej powtórki
+
+2. Widoki
+    a) widok dodawania powtórek:
+        nazwa materiału
+        treść lub odnośnik do teorii dotyczącej powtarzanego materiału
+        ćwiczenia, pytania do materiału
+    b) lista powtórek dla danego dnia:
+        tytuł materiału
+        odnośnik do przejścia do powtórki
+    c) widok powtórki:
+        nazwa
+        pytania
+        materiał (ukryty lub po prostu na samym końcu)
+
+    ---------------- Opcjonalne -----------------------------------------------
+
+    d) kalendarz powtórek
+
+3. Algorytm wyliczania daty następnej powtórki
+    data_nastepnej_powtorki = data_biezacej + 2 ^ (numer_biezacej - 1)
