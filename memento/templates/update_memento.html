@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %} Powtórka - {{item.name}} {% endblock %}
+{% block content %}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Gratulacje!</h3>
+    </div>
+    <div class="panel-body">
+        <p>Udało Ci się zrealizować kolejną powtórkę.</p>
+        <p>Następna powtórka "{{item.name}}" odbędzie się {{item.next_repetition_date}}.</p>
+        <form action="{{url_for('get_memento_list')}}">
+            <button type="submit" class="btn btn-primary">Przejdź do listy powtórek</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

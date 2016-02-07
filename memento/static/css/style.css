@@ -4,7 +4,8 @@ body {
 }
 
 footer#footer-copy {
-    padding: 25px 0;
+    position: absolute;
+    bottom: 20px;
 }
 
 div.panel h3.panel-title {

@@ -8,6 +8,7 @@
         <tr>
             <th>#</th>
             <th>Nazwa</th>
+            <th>Data nastepnej powtórki</th>
             <th></th>
         </tr>
     </thead>
@@ -15,8 +16,9 @@
         {% for number, item in items %}
         <tr>
             <th scope="row">{{number}}</th>
-            <td>{{ item }}</td>
-            <td><a href="">Przejdź do powtórki</a></td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.next_repetition_date }}</td>
+            <td><a href="{{url_for('get_memento', memento_id=item.id)}}">Przejdź do powtórki</a></td>
         </tr>
         {% endfor %}
     </tbody>

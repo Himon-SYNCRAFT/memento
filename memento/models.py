@@ -1,14 +1,15 @@
 from memento import db
-from datetime import datetime, timedelta
+from datetime import date, timedelta
 
 
 class MementoItem(db.Model):
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(256), nullable=False)
     exercise = db.Column(db.String(4096))
     theory = db.Column(db.String(4096))
     number_of_repetitions = db.Column(db.Integer, nullable=False)
-    next_repetition_date = db.Column(db.DateTime, nullable=False)
+    next_repetition_date = db.Column(db.Date, nullable=False)
 
     def __init__(self, name, exercise=None, theory=None):
         self.name = name
@@ -23,4 +24,4 @@ class MementoItem(db.Model):
         else:
             days = 2 ** (self.number_of_repetitions - 1)
 
-        self.next_repetition_date =  datetime.now() + timedelta(days=days)
+        self.next_repetition_date = date.today() + timedelta(days=days)
