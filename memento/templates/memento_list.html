@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %} Lista powtórek {% endblock %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nazwa</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for number, item in items %}
+        <tr>
+            <th scope="row">{{number}}</th>
+            <td>{{ item }}</td>
+            <td><a href="">Przejdź do powtórki</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

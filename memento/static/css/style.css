@@ -1,0 +1,24 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+}
+
+footer#footer-copy {
+    padding: 25px 0;
+}
+
+div.panel h3.panel-title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.likeabutton {
+    text-decoration: none; font: menu;
+    display: inline-block; padding: 2px 8px;
+    background: ButtonFace; color: ButtonText;
+    border-style: solid; border-width: 2px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+}
+.likeabutton:active {
+    border-color: ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
+}

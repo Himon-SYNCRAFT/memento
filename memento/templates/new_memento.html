@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %} Dodaj nowy materiał do powtórzenia {% endblock %}
+
+{% block content %}
+<form method="post">
+    <div class="form-group">
+        <label for="name">Nazwa powtórki</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nazwa powtórki">
+    </div>
+    <div class="form-group">
+        <label for="exercise">Pytanie / Ćwiczenie</label>
+        <textarea class="form-control" id="exercise" name="exercise" placeholder="Pytanie / Ćwiczenie"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="theory">Teoria</label>
+        <textarea class="form-control" id="theory" name="theory" placeholder="Teoria"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Zapisz</button>
+</form>
+{% endblock %}

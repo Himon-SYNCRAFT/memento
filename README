@@ -29,3 +29,10 @@ System do powtórek
 
 3. Algorytm wyliczania daty następnej powtórki
     data_nastepnej_powtorki = data_biezacej + 2 ^ (numer_biezacej - 1)
+
+4. Modele
+    a) Powtorka:
+        nazwa
+        tresc zadania powtorkowego
+        material/teoria dotyczaca powtorki
+        numer biezacej powtorki, ktora jest to powtorka z kolei - potrzebne do obliczenia daty nastepnej powtorki
