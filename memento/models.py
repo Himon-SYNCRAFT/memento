@@ -24,4 +24,5 @@ class MementoItem(db.Model):
         else:
             days = 2 ** (self.number_of_repetitions - 1)
 
+        days = min(days, 30)
         self.next_repetition_date = date.today() + timedelta(days=days)
