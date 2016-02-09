@@ -60,5 +60,4 @@ def accept_memento(memento_id):
 
 @app.route('/test')
 def test():
-    now = datetime.now()
-    return render_template("hello.html", date=now)
+    return "poszlo"
