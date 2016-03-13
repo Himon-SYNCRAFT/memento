@@ -8,8 +8,9 @@
         <tr>
             <th>#</th>
             <th>Nazwa</th>
-            <th>Data nastepnej powtórki</th>
-            <th></th>
+            <th>Data następnej powtórki</th>
+            <th>Edycja powtórki</th>
+            <th>Przejdź do powtórki</th>
         </tr>
     </thead>
     <tbody>
@@ -18,7 +19,8 @@
             <th scope="row">{{number}}</th>
             <td>{{ item.name }}</td>
             <td>{{ item.next_repetition_date }}</td>
-            <td><a href="{{url_for('get_memento', memento_id=item.id)}}">Przejdź do powtórki</a></td>
+            <td><a href="{{url_for('edit_memento', memento_id=item.id)}}">Edytuj&nbsp;<span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+            <td><a href="{{url_for('get_memento', memento_id=item.id)}}">Sprawdź&nbsp;<span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></td>
         </tr>
         {% endfor %}
     </tbody>

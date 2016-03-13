@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %} Edytuj powtórkę {% endblock %}
+
+{% block content %}
+<form method="post">
+    <div class="form-group">
+        <label for="name">Nazwa powtórki</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nazwa powtórki" value="{{item.name}}">
+    </div>
+    <div class="form-group">
+        <label for="exercise">Pytanie / Ćwiczenie</label>
+        <textarea class="form-control elastic" id="exercise" name="exercise" placeholder="Pytanie / Ćwiczenie">{{item.exercise}}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="theory">Teoria</label>
+        <textarea class="form-control elastic" id="theory" name="theory" placeholder="Teoria">{{item.theory}}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="number_of_repetitions">Ilość powtórek</label>
+        <input type="number" class="form-control" id="number_of_repetitions" name="number_of_repetitions" value="{{item.number_of_repetitions}}">
+    </div>
+    <div class="form-group">
+        <label for="date">Data następnej powtórki</label>
+        <input id="date" name="date" type="date" value="{{item.next_repetition_date}}" placeholder="yyyy-mm-dd">
+    </div>
+    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">&nbsp;</span>Zapisz</button>
+</form>
+{% endblock %}

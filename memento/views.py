@@ -44,13 +44,12 @@ def get_memento(memento_id):
 
 @app.route('/update/<int:memento_id>', methods=['POST'])
 def accept_memento(memento_id):
-    if request.method == 'POST':
-        item = MementoItem.query.get_or_404(memento_id)
-        item.number_of_repetitions += 1
-        item.next_repetition_date = request.form['date']
+    item = MementoItem.query.get_or_404(memento_id)
+    item.number_of_repetitions += 1
+    item.next_repetition_date = request.form['date']
 
-        db.session.add(item)
-        db.session.commit()
+    db.session.add(item)
+    db.session.commit()
 
     return render_template(
         'update_memento.html',
@@ -58,6 +57,21 @@ def accept_memento(memento_id):
     )
 
 
-@app.route('/test')
-def test():
-    return "poszlo"
+@app.route('/edit/<int:memento_id>', methods=['GET', 'POST'])
+def edit_memento(memento_id):
+    item = MementoItem.query.get_or_404(memento_id)
+
+    if request.method == 'POST':
+        item.name = request.form['name']
+        item.exercise = request.form['exercise']
+        item.theory = request.form['theory']
+        item.number_of_repetitions = request.form['number_of_repetitions']
+        item.next_repetition_date = request.form['date']
+
+        db.session.add(item)
+        db.session.commit()
+
+    return render_template(
+        'edit_memento.html',
+        item=item
+    )

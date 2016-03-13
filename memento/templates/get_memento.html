@@ -17,7 +17,7 @@
         <h3 class="panel-title">{{item.name}} - teoria</h3>
     </div>
     <div class="panel-body">
-        {{item.theory}}
+        {{item.theory | nl2br}}
     </div>
 </div>
 
@@ -31,7 +31,7 @@
                 <label for="date">Data następnej powtórki</label>
                 <input id="date" name="date" type="date" value="{{item.next_repetition_date}}" placeholder="yyyy-mm-dd">
             </div>
-            <button type="submit" class="btn btn-primary">Akceptuj</button>
+            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true">&nbsp;</span>Akceptuj</button>
         </form>
     </div>
 </div>
