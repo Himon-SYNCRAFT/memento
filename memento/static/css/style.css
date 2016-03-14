@@ -23,3 +23,7 @@ div.panel h3.panel-title {
 .likeabutton:active {
     border-color: ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
 }
+
+.navbar {
+    border-radius: 0;
+}

@@ -16,6 +16,11 @@ def get_memento_list_by_date(year, month=None, day=None):
     items = ['matma', 'programowanie']
     return render_template('memento_list.html', items=enumerate(items, start=1))
 
+@app.route('/all')
+def all_memento_list():
+    items = MementoItem.query.all()
+    return render_template('memento_list.html', items=enumerate(items, start=1))
+
 
 @app.route('/add', methods=['GET', 'POST'])
 def new_memento():
