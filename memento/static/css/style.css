@@ -4,8 +4,18 @@ body {
 }
 
 footer#footer-copy {
-    position: absolute;
-    bottom: 20px;
+    height: 28px;
+    padding-left: 15px;
+}
+
+#content {
+    height: 100%;
+    margin-bottom: -28px;
+}
+
+#content::after {
+    content: "";
+    display: block;
 }
 
 div.panel h3.panel-title {

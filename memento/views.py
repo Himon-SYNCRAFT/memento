@@ -7,7 +7,10 @@ from memento.models import MementoItem
 @app.route('/list')
 @app.route('/')
 def get_memento_list():
-    items = MementoItem.query.filter(MementoItem.next_repetition_date <= date.today())
+    items = MementoItem.query\
+                       .filter(MementoItem.next_repetition_date <= date.today())\
+                       .order_by(MementoItem.next_repetition_date)
+
     return render_template('memento_list.html', items=enumerate(items, start=1))
 
 
@@ -16,9 +19,10 @@ def get_memento_list_by_date(year, month=None, day=None):
     items = ['matma', 'programowanie']
     return render_template('memento_list.html', items=enumerate(items, start=1))
 
+
 @app.route('/all')
 def all_memento_list():
-    items = MementoItem.query.all()
+    items = MementoItem.query.order_by(MementoItem.next_repetition_date).all()
     return render_template('memento_list.html', items=enumerate(items, start=1))
 
 
@@ -46,6 +50,7 @@ def get_memento(memento_id):
         'get_memento.html',
         item=item
     )
+
 
 @app.route('/update/<int:memento_id>', methods=['POST'])
 def accept_memento(memento_id):
